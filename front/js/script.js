@@ -23,7 +23,7 @@ fetch("http://localhost:3000/api/products")
     {
           produitsHTML += '<a href="./product.html?id='+produit['_id']+'">'+            
                               '<article>'+
-                              '<img src="'+produit['imageUrl']+'" alt="'+['name']+'">'+
+                              '<img src="'+produit['imageUrl']+'" alt="'+['altTxt']+'">'+
                               '<h3 class="productName">'+produit['name']+'</h3>'+
                               '<p class="productDescription">'+produit['description']+'</p>'+
                               '</article>'+
@@ -39,4 +39,7 @@ fetch("http://localhost:3000/api/products")
   })
   .catch(function(err) {
     // Une erreur est survenue
+    console.log("Erreur de la requête API")
   });
+
+  
