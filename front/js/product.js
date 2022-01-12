@@ -56,7 +56,8 @@ function getPost(article){
 
 const colorPicked = document. querySelector("#colors");
 const quantityPicked = document.querySelector("#quantity");
-
+// let produitLocalStorage = JSON.parse(localStorage.getItem("produit"));
+console.log(localStorage.getItem('produit'));
 //Gestion du panier
 function addToCart(article) {
   const btn_envoyerPanier = document.querySelector("#addToCart");
@@ -84,12 +85,14 @@ function addToCart(article) {
   };
 
   //Initialisation du local storage
-  let produitLocalStorage = JSON.parse(localStorage.getItem("produit"));
+  let produitLocalStorage = JSON.parse(localStorage.getItem("produits"));
 
   //fenêtre pop-up
   const popupConfirmation =() =>{
       if(window.confirm(`Votre commande de ${choixQuantite} ${article.name} ${choixCouleur} est ajoutée au panier
 Pour consulter votre panier, cliquez sur OK`)){
+          produitLocalStorage.push(optionsProduit);
+          localStorage.setItem("produits", JSON.stringify(produitLocalStorage));
           window.location.href ="cart.html";
       }
   }
