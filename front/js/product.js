@@ -91,7 +91,7 @@ function addToCart(article) {
   const popupConfirmation =() =>{
       if(window.confirm(`Votre commande de ${choixQuantite} ${article.name} ${choixCouleur} est ajoutée au panier
 Pour consulter votre panier, cliquez sur OK`)){
-          produitLocalStorage.push(optionsProduit);
+          // produitLocalStorage.push(optionsProduit);
           localStorage.setItem("produits", JSON.stringify(produitLocalStorage));
           window.location.href ="cart.html";
       }
